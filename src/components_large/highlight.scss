@@ -1,0 +1,37 @@
+$textColor : white;
+
+.highlight-div {
+    color: $textColor;
+
+    .highlight-div__bg-div {
+        // height: 100vh;
+        overflow: hidden;
+
+        img {
+            width: 100%;
+            height: auto
+        }
+
+    }
+
+    .highlight__info-div {
+        position: absolute;
+        width: 40%;
+        top: clamp(10px, 10.5vw, 200px);
+        left: clamp(10px, 4vw, 50px);
+        font-size: clamp(5px, 1.5vw, 30px);
+
+        .info-div__title-div {
+            img {}
+
+            h1 {}
+
+        }
+
+        .info-div__intro-div {
+            p {}
+        }
+
+        button {}
+    }
+}
