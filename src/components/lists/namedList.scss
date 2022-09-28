@@ -1,0 +1,11 @@
+.named-list__with-highlight {
+    overflow-x: clip;
+    position: relative;
+    top: clamp(-280px, -15vw, -16px);
+    z-index: 1;
+}
+
+.named-list__without-highlight {
+    overflow-x: clip;
+    margin-top: 90px;
+}

@@ -1,0 +1,65 @@
+.footer-div {
+    padding-top: 2em;
+
+    .social-media-div {
+        margin: auto;
+        width: 40%;
+
+        span {
+            font-size: 1.3em;
+            color: lightblue;
+            line-height: 2;
+
+        }
+
+        img {
+            width: 100%;
+        }
+    }
+
+    .links {
+        max-width: 800px;
+        width: 100%;
+        margin: 1em auto;
+        font-size: 1.2em;
+        color: grey;
+
+
+        ul {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            column-gap: 20px;
+
+            li {
+                // width: 20%;
+                // float: left;
+
+                &:hover {
+                    text-decoration: underline;
+                    cursor: pointer;
+                }
+
+                a {
+                    width: 100%;
+                    padding: .5em 0;
+                    display: block;
+
+                }
+            }
+        }
+    }
+
+    .copyright-div {
+
+        text-align: center;
+
+
+        p {
+            font-size: 1.1em;
+            clear: both;
+
+        }
+    }
+
+}

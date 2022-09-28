@@ -1,0 +1,131 @@
+@import "../../variables";
+
+.sub-header {
+    height: 40px;
+    padding: 0 clamp(15px, 3vw, 60px);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    @media (min-width: 885px) {
+        height: 70px;
+    }
+
+    h1 {
+        color: white;
+        font-size: 38px;
+        line-height: 1;
+        float: left;
+    }
+
+
+    .genre-dropdown-button {
+        position: relative;
+        width: 100px;
+        margin: 3px 40px;
+        height: 35px;
+        border: 1px solid white;
+        background-color: black;
+        color: white;
+        font-size: 18px;
+        font-weight: bold;
+        cursor: pointer;
+
+        &:hover {
+            background-color: rgba(255, 255, 255, 0.082);
+        }
+    }
+
+    .genre-dropdown {
+        position: absolute;
+        height: fit-content;
+        top: 34px;
+        left: 0;
+        width: 400px;
+        font-size: 14px;
+        font-weight: lighter;
+        text-align: left;
+        background-color: rgba(0, 0, 0, 0.932);
+        padding: 10px;
+        z-index: 6;
+
+        ul li {
+            width: 33%;
+            float: left;
+        }
+
+        a {
+            width: 100%;
+            padding: 5px 5px;
+            display: block;
+
+            &:hover {
+                text-decoration: underline;
+            }
+
+        }
+    }
+
+    .genre-title {
+        @extend %flex-center;
+        column-gap: 10px;
+    }
+
+    .view-toggle {
+        // border: 1px solid grey;
+        display: flex;
+        align-items: center;
+        position: relative;
+        height: 25px;
+
+
+        .view-mode-button {
+            // width: 60px;
+            background: none;
+            cursor: pointer;
+            @extend %flex-center;
+            padding: 5px 15px;
+
+            img {
+                width: 15px;
+            }
+
+
+        }
+
+        &>.view-mode-button {
+            border: 1px solid grey;
+        }
+
+
+
+        .tiles-over-container {
+            @extend %flex-center;
+            // background-color: rgb(0, 0, 0);
+            border: 1px solid grey;
+
+
+        }
+
+
+        h3 {
+            padding: 5px;
+        }
+
+        .view-mode-dropdown {
+            border: 1px solid white;
+            width: 130px;
+            background-color: rgba(0, 0, 0, 0.671);
+            padding: 10px;
+            position: absolute;
+            right: 0;
+            top: 35px;
+
+            a {
+                font-size: 14px;
+            }
+        }
+    }
+
+
+}

@@ -1,0 +1,64 @@
+$textColor : white;
+
+.highlight-div {
+    color: $textColor;
+    aspect-ratio: 500/290;
+    overflow: hidden;
+
+    .highlight-div__bg-div {
+        width: 100%;
+        aspect-ratio: 500 / 290;
+        overflow: hidden;
+        background-repeat: no-repeat;
+        background-size: contain;
+        background-blend-mode: hue;
+        position: relative;
+
+        .bg-div__filter {
+            width: 100%;
+            height: 20%;
+            background-image: linear-gradient(360deg, #141414 20%, transparent);
+            bottom: 0;
+            position: absolute;
+
+        }
+
+        img {
+            width: 100%;
+            height: auto;
+            vertical-align: bottom;
+        }
+
+    }
+
+    .highlight__info-div {
+        position: absolute;
+        width: 40%;
+        top: clamp(10px, 25vw, 500px);
+        left: clamp(15px, 4vw, 60px);
+        font-size: clamp(5px, 1.5vw, 25px);
+
+        .info-div__title-div {
+            img {}
+
+            h1 {}
+
+        }
+
+        .info-div__intro-div {
+            height: auto;
+            overflow: hidden;
+            margin-bottom: 1rem;
+
+            p {
+                overflow: hidden;
+                text-overflow: ellipsis;
+                display: -webkit-box;
+                -webkit-line-clamp: 3;
+                -webkit-box-orient: vertical;
+            }
+        }
+
+        button {}
+    }
+}

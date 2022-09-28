@@ -1,0 +1,47 @@
+$backgroundColor : #141414;
+$textColor : #fff;
+
+
+$buttonColor-primary : rgba(240, 240, 240);
+$buttonColor-secondary : rgba(109, 109, 110, 0.7);
+
+$listArrowLinkColor : #54b9c5;
+$listHoverBgColor : #181818;
+
+$ToolTipBgColor : rgb(230, 230, 230);
+$TootTipColor : rgb(24 24 24);
+
+$PreviewBgColor : #181818; //tile preview, preview
+$PreviewSpanColor: #777;
+
+$PreviewEpisodesBorderColor: #404040;
+$PreviewNextEpisodeHighlightColor: #333;
+
+$PreviewSeasonDropdownButtonColor : rgb(36, 36, 36);
+$PreviewSeasonDropdownBorderColor: rgb(77, 77, 77);
+
+$PreviewTileBgColor: #2f2f2f;
+
+
+%flex-center {
+    display: flex;
+    justify-content: center;
+    align-content: center;
+    align-items: center;
+}
+
+
+
+@mixin arrow ($deg, $size, $padding : 10px, $color : white) {
+    padding: $padding;
+    border-width: $size $size 0px 0;
+    border-style: solid;
+    border-color: $color;
+    transform: rotate($deg);
+}
+
+
+//Preview var
+// $smallHeaderFontSize : 24px; //h3
+// $smallFontSize : 16px;
+// $smallerFontSize : 14px; //label link

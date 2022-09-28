@@ -1,0 +1,180 @@
+.login-page-container {
+    // position: relative;
+    width: 100%;
+    padding-top: 100px;
+    padding-bottom: 20px;
+    background-color: rgba(2, 2, 2, 0.9);
+
+
+    .bg-image {
+        height: 100vh;
+        display: none;
+
+    }
+
+    .content {
+        width: inherit;
+        // position: absolute;
+        // top: 0px;
+
+    }
+
+    .logo {
+        width: clamp(150px, 10vw, 250px);
+        position: absolute;
+        top: 1rem;
+        z-index: 1;
+
+        img {
+            width: 100%;
+        }
+    }
+
+
+
+    a:hover {
+        text-decoration: underline;
+        cursor: pointer;
+    }
+
+    .sign-in-div {
+        width: 90%;
+        margin: auto;
+
+        .sign-in__login {
+            // margin-top: 100px;
+
+            h1 {
+                font-size: 2.4rem;
+            }
+
+            input {
+                width: calc(98% - 10px);
+                font-size: 1.5rem;
+                padding: 1rem 5px;
+                margin: 10px 0;
+                background-color: grey;
+                outline: none;
+                border-radius: 5px;
+                color: white;
+
+                &::placeholder {
+                    color: rgb(207, 207, 207);
+                }
+
+                &:focus {
+                    border-bottom: 2px solid orange;
+
+                }
+            }
+
+            button {
+                width: 100%;
+                font-size: 1.5rem;
+                font-weight: bold;
+                padding: 1rem;
+                background-color: rgb(255, 37, 37);
+                color: white;
+                cursor: pointer;
+            }
+
+            .sign-in-options {
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
+
+                .remember-me {
+                    display: flex;
+                    align-items: center;
+
+                    input {
+                        width: 20px;
+                    }
+
+                    span {}
+
+                }
+            }
+
+        }
+
+        .new-to-netflix-div {
+            margin: 3rem 0;
+
+            span {
+                color: grey;
+                margin: 10px 0;
+                font-size: 1.5rem;
+            }
+
+            a {
+                color: white;
+
+
+            }
+
+
+
+            p {
+                margin: 10px 0;
+                color: grey;
+                font-size: 1.2rem;
+
+                a {
+                    color: rgb(0, 153, 255)
+                }
+            }
+        }
+    }
+
+
+    @media screen and (min-width: 400px) {
+        .sign-in-div {
+            width: 80%;
+        }
+    }
+
+    @media screen and (min-width: 700px) {
+        padding: 0;
+        height: 800px;
+        overflow: hidden;
+
+        .bg-image {
+            display: block;
+            height: 100%;
+            width: auto;
+
+        }
+
+        .content {
+            position: absolute;
+            z-index: 1;
+            top: 0;
+
+            .logo {}
+
+            .sign-in-div {
+                width: 350px;
+                padding: 5rem;
+                background-color: rgba(2, 2, 2, 0.9);
+                margin-top: 100px;
+
+                .sign-in__login>h1 {
+                    padding-bottom: 10px;
+                }
+            }
+
+        }
+
+
+
+    }
+
+    @media screen and (min-width: 1450px) {
+        .bg-image {
+            width: 100%;
+            height: auto;
+        }
+
+    }
+}

@@ -1,0 +1,181 @@
+@import "../variables";
+
+
+@keyframes tile-expand-center {
+    from {
+        width: 100%;
+        top: 0;
+        left: 0;
+    }
+
+    to {
+        width: 150%;
+        top: -70px;
+        left: -25%;
+    }
+}
+
+@keyframes tile-expand-center-reverse {
+
+    from {
+        width: 150%;
+        top: -70px;
+        left: -25%;
+    }
+
+    to {
+        width: 100%;
+        top: 0;
+        left: 0;
+    }
+}
+
+
+
+
+@keyframes tile-expand-left {
+    from {
+        width: 100%;
+        top: 0;
+        left: 0;
+    }
+
+    to {
+        width: 150%;
+        top: -70px;
+        left: 0;
+    }
+}
+
+
+@keyframes tile-expand-left-reverse {
+
+
+    from {
+        width: 150%;
+        top: -70px;
+        left: 0;
+    }
+
+    to {
+        width: 100%;
+        top: 0;
+        left: 0;
+    }
+}
+
+@keyframes tile-expand-right {
+    from {
+        width: 100%;
+        top: 0;
+        left: 0;
+    }
+
+    to {
+        width: 150%;
+        top: -70px;
+        left: -50%;
+    }
+}
+
+@keyframes tile-expand-right-reverse {
+
+    from {
+        width: 150%;
+        top: -70px;
+        left: -50%;
+    }
+
+    to {
+        width: 100%;
+        top: 0;
+        left: 0;
+    }
+}
+
+
+
+.card {
+    float: left;
+    width: calc(16.5% - 10px);
+    margin: 0 5px;
+    position: relative;
+    border-radius: 5px;
+    // overflow: hidden;
+    cursor: pointer;
+
+    .card__image {
+        position: relative;
+
+        img {
+            width: 100%;
+            height: auto;
+            aspect-ratio: 3/1.7; // Used in JS List
+        }
+
+        h1 {
+            position: absolute;
+            z-index: 1;
+            bottom: 5px;
+            font-size: clamp(13px, 1.5vw, 24px);
+            color: white;
+        }
+
+        // buttons
+    }
+
+
+    .card__preview {
+        width: initial;
+        left: 0;
+        top: 0;
+        background-color: $PreviewBgColor;
+        box-shadow: 0 0 10px black;
+        border-radius: 10px;
+        position: absolute;
+        z-index: 2;
+        display: none;
+        animation-duration: .2s;
+        animation-fill-mode: forwards;
+        animation-direction: normal;
+
+
+        &>img {
+            width: 100%;
+        }
+
+        .card__preview__info {
+            padding: 0em 1em 1em 1em;
+
+            .tile-buttons {
+                display: flex;
+                justify-content: space-between;
+            }
+
+            button {
+                // width: 40px;
+                margin: 10px 5px;
+                height: fit-content;
+                // height: 37px;
+                // border-radius: 50%;
+            }
+        }
+    }
+
+
+    //List title arrow
+    &.list:hover .title-arrow {
+        display: block;
+    }
+
+}
+
+.debug {
+    position: absolute;
+    z-index: 3;
+    width: 40px;
+    height: 40px;
+    background-color: blue;
+    left: 50%;
+    height: 50%;
+}

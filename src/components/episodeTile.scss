@@ -1,0 +1,51 @@
+// .episodes-container {
+//     .episode-tile:nth-of-type(2) {
+//         background-color: #464646;
+//     }
+// }
+
+.episode-tile {
+    display: flex;
+    flex-direction: row;
+    padding: 25px 0;
+    // background-color: red;
+    border-width: 1px 0 1px 0;
+    border-style: solid;
+    border-color: rgb(82, 82, 82);
+    border-radius: 5px;
+    cursor: pointer;
+
+    .index-no {
+        width: 5%;
+        display: flex;
+        align-items: center;
+        justify-content: space-around;
+    }
+
+    .episode-image {
+        width: 20%;
+
+        img {
+            width: 80%;
+            padding: 0 10%;
+        }
+
+    }
+
+    .episode-summary {
+        width: 75%;
+
+        .episode-title {
+            display: flex;
+            justify-content: space-between;
+            width: 95%;
+
+            h2 {}
+        }
+
+        .episode-description {
+            p {}
+        }
+    }
+
+}

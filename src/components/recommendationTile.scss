@@ -1,0 +1,47 @@
+.recommendation-tile {
+    background-color: #2f2f2f;
+    border-radius: 5px;
+    overflow: visible;
+    cursor: pointer;
+
+    .img-container {
+        img {
+            width: 100%;
+        }
+
+        h2 {}
+    }
+
+    .recommendation-content {
+        margin: auto;
+        padding: 10px 15px 20px 15px;
+        height: 140px;
+        overflow: visible;
+
+
+        .legend {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding-bottom: 10px;
+
+            img {}
+
+            h2 {
+                color: white;
+                line-height: none;
+            }
+        }
+
+        .tile-description {
+            p {
+                color: rgb(211, 211, 211);
+                overflow: hidden;
+                text-overflow: ellipsis;
+                display: -webkit-box;
+                -webkit-line-clamp: 5;
+                -webkit-box-orient: vertical;
+            }
+        }
+    }
+}

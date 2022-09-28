@@ -1,0 +1,152 @@
+@import "../variables";
+
+
+.default-button-text {
+    padding: 5px;
+    margin: clamp(5px, 0.5vw, 10px) clamp(3px, 0.3vw, 10px);
+    padding: clamp(3px, 0.7vw, 12px) clamp(10px, 2.2vw, 30px);
+    border: none;
+    display: flex;
+    column-gap: 10px;
+    align-items: center;
+    border-radius: 4px;
+    cursor: pointer;
+    float: left;
+
+    h1 {
+        font-size: clamp(12px, 2vw, 22px);
+
+    }
+
+    .button-image {
+        width: clamp(12px, 1.8vw, 28px);
+
+        img {
+            width: 100%;
+        }
+    }
+}
+
+
+.play-button--text {
+    @extend .default-button-text;
+}
+
+.info-button--text {
+    @extend .default-button-text;
+    background-color: $buttonColor-secondary;
+    color: white;
+}
+
+
+.default-button-round {
+    width: clamp(35px, 3.2vw, 45px);
+    aspect-ratio: 1/1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 50%;
+    background-color: $backgroundColor;
+    border: 2px solid grey;
+    position: relative;
+    cursor: pointer;
+    float: left;
+
+    .button-image {
+        width: 80%;
+
+        display: flex;
+        justify-content: center;
+
+        img {
+            width: 90%;
+
+        }
+    }
+}
+
+.play-button--round {
+    @extend .default-button-round;
+    background-color: $buttonColor-primary;
+    border: none;
+}
+
+.info-button--round {
+    @extend .default-button-round;
+}
+
+.add-button--round {
+    @extend .default-button-round;
+}
+
+.like-button--round {
+    @extend .default-button-round;
+    position: relative;
+
+    &:hover {
+        background-color: #292929;
+
+        .like-dropdown {
+            display: flex;
+        }
+    }
+}
+
+.like-dropdown {
+    padding: 5px 8px;
+    border-radius: 300px;
+    background-color: $backgroundColor;
+    position: absolute;
+    top: -5px;
+    box-shadow: 0 1px 10px black;
+
+    display: none;
+
+    .like-buttons {
+        @extend .default-button-round;
+        border: none;
+
+        &:hover {
+            background-color: #292929;
+
+            .tool-tip-text {
+                display: block;
+            }
+        }
+
+        .button-image {
+            width: 54%;
+        }
+    }
+}
+
+.info-button--round,
+.add-button--round {
+    &:hover {
+        border-color: white;
+
+        .tool-tip-text {
+            display: block;
+        }
+    }
+}
+
+
+.tool-tip-text {
+    position: absolute;
+    z-index: 1;
+    top: -40px;
+    display: none;
+    color: black;
+    width: fit-content;
+    background-color: white;
+    width: max-content;
+    padding: 5px 10px;
+    border-radius: 4px;
+
+}
+
+
+.arrow-down {
+    @include arrow(135deg, 3px, 5px, #ffffff);
+}

@@ -1,0 +1,346 @@
+@import "../variables";
+
+.front-page-div {
+    position: relative;
+    background-color: black;
+    width: 100%;
+    overflow: hidden;
+
+
+    //global
+    .email-container {
+        text-align: center;
+
+        .email-input {
+            width: 90%;
+            font-size: 1.5rem;
+            padding: 1rem;
+            margin: auto;
+        }
+
+        .email-button {
+            width: 150px;
+            font-size: 1.3rem;
+            color: white;
+            background-color: rgb(196, 0, 0);
+            padding: 1.1rem 0;
+            margin-top: 10px;
+            border: none;
+            cursor: pointer;
+
+            &:hover {
+                background-color: red;
+            }
+
+        }
+    }
+
+    h2 {
+        font-size: clamp(2.2rem, 4.3vw, 4rem);
+        margin: 10px 0;
+    }
+
+    h3 {
+        font-size: clamp(1.5rem, 4.3vw, 2rem);
+        font-weight: normal;
+        text-align: center;
+        margin: 10px 0;
+    }
+
+    // end of global
+
+    .nav {
+        position: absolute;
+        top: 0;
+        z-index: 1;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        width: calc(100% - 2rem);
+        margin: 1rem 0;
+
+        .logo-div {
+            width: clamp(150px, 10vw, 250px);
+
+            img {
+                width: 100%;
+            }
+        }
+
+        .sign-button {
+            background-color: red;
+            color: white;
+            border-radius: 5px;
+            cursor: pointer;
+            border: none;
+            padding: 0.6rem 1.5rem;
+            height: fit-content;
+            font-size: clamp(1.5rem, 2vw, 2rem);
+        }
+    }
+
+
+    // h2 {
+    //     font-size: 2rem;
+    //     margin: 10px 0;
+    // }
+
+    // h3 {
+    //     font-size: 1.5rem;
+    //     font-weight: normal;
+    //     text-align: center;
+    //     margin: 10px 0;
+    // }
+
+    // .email-container {
+    //     // display: flex;
+
+    //     input {
+    //         width: 90%;
+    //         font-size: 1.5rem;
+    //         padding: 1rem;
+    //         margin: auto;
+    //     }
+
+    //     .email-button {
+    //         width: 60%;
+    //         font-size: 1.3rem;
+    //         color: white;
+    //         background-color: rgb(196, 0, 0);
+    //         padding: 1.1rem 0;
+    //         margin-top: 10px;
+    //         border: none;
+    //         cursor: pointer;
+
+    //         &:hover {
+    //             background-color: red;
+    //         }
+
+    //     }
+    // }
+
+
+    .main-tile {
+        border-bottom: 0.6rem solid #303030;
+        height: 500px;
+        overflow: hidden;
+
+        //bg
+        img {
+            filter: brightness(0.3);
+            height: 100%;
+            // width: 100vw
+            // overflow: hidden;
+        }
+
+        .info-div {
+            position: absolute;
+            top: 100px;
+            width: 86%;
+            max-width: 950px;
+            margin: 0 7%;
+            text-align: center;
+            // display: flex;
+            // flex-wrap: wrap;
+            row-gap: 15px;
+
+            h2 {
+                font-size: clamp(2.2rem, 4.3vw, 5.2rem);
+            }
+
+            h3 {}
+
+            //email container is global
+        }
+
+        .tile {}
+    }
+
+    .tile {
+        padding: 50px 0;
+        border-bottom: 0.6rem solid #303030;
+        display: flex;
+        flex-wrap: wrap;
+
+
+        .text-div {
+            width: 90%;
+            margin: auto;
+            text-align: center;
+
+            h2 {}
+
+            h3 {}
+
+        }
+
+        .img-div {
+            width: 90%;
+            margin: auto;
+            border-radius: 50px;
+            overflow: hidden;
+            max-width: 500px;
+
+            img {
+                width: 100%;
+                // height: 50px;
+                // background-color: red;
+            }
+        }
+
+        ;
+
+        &:nth-last-of-type(even) {
+            flex-direction: row-reverse;
+        }
+    }
+
+
+
+    .faq-tile {
+        h2 {
+            text-align: center;
+            padding: 1em 0;
+        }
+
+        span {
+            font-size: 2em;
+        }
+
+        .question-tab {
+            width: 80%;
+            background-color: #303030;
+            margin: 10px auto;
+
+            .question__name {
+                padding: 1.7rem;
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
+
+            }
+
+            .question__answer {
+                padding: 2rem;
+                border-top: 1px solid black;
+            }
+        }
+    }
+
+
+    .bottom-email-container {
+        width: 90%;
+        margin: 20px auto;
+    }
+
+    @media screen and (min-width: 550px) {
+        .main-tile {
+            height: 800px;
+
+            .info-div {
+                top: 200px;
+            }
+        }
+
+
+    }
+
+    @media screen and (min-width: 700px) {}
+
+    @media screen and (min-width: 950px) {
+
+        .main-tile {
+            .info-div {
+                margin-left: calc(50% - 300px);
+                width: 600px;
+            }
+        }
+
+        .email-container {
+            width: 600px;
+            margin: auto;
+
+
+            .email-input {
+                width: 70%;
+            }
+
+            .email-button {
+                width: 25%;
+                padding: 1.3rem;
+            }
+        }
+
+        .tile {
+            margin: auto;
+
+            .text-div {
+                width: 40%;
+            }
+
+            img {
+                width: 40%;
+            }
+        }
+
+    }
+
+    @media screen and (min-width: 1100px) {
+
+        .tile {
+            padding-left: calc(50% - 550px);
+            padding-right: calc(50% - 550px);
+        }
+
+        .faq-tile {
+            .question-tab {
+                width: 800px;
+
+            }
+        }
+
+    }
+
+    @media screen and (min-width: 1400px) {
+
+        .main-tile {
+            &>img {
+                width: 100%;
+                height: auto;
+            }
+
+            .info-div {
+                margin-left: calc(50% - 450px);
+                width: 900px;
+            }
+        }
+
+        .email-container {
+            width: 900px;
+
+            .email-input {
+                width: 70%;
+                font-size: 1.8rem;
+
+            }
+
+            .email-button {
+                width: 25%;
+                padding: 1.3rem;
+                font-size: 1.7rem;
+            }
+        }
+    }
+
+    @media screen and (min-width: 1800px) {
+
+        .main-tile {
+            height: 700px;
+
+            img {
+                width: 100%;
+                height: auto;
+            }
+        }
+    }
+}

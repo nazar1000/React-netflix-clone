@@ -1,0 +1,260 @@
+@import "../../variables";
+
+
+.pinned-header {
+    position: fixed;
+    z-index: 3;
+    top: 0;
+    width: 100%;
+
+    .pinned-header-container {}
+
+    .menu-navigation {
+        display: flex;
+        align-items: center;
+        height: 40px;
+        padding: 0 clamp(15px, 3vw, 60px);
+        background-image: linear-gradient(180deg, rgb(0 0 0 / 70%) 10%, transparent);
+
+        .logo {
+            height: 75%;
+
+            img {
+                height: 100%;
+            }
+        }
+    }
+
+    .primary-navigation {
+        display: flex;
+        gap: 10px;
+        flex-direction: row;
+        margin-left: clamp(10px, 1vw, 25px);
+
+
+        .mobile-menu-container {
+            position: relative;
+
+            //Mobile dropdown menu (left)
+            .mobile-menu-button {
+                color: $textColor;
+                font-weight: bold;
+                border: none;
+                background: none;
+
+                &:hover .mobile-menu-dropdown {
+                    display: block;
+                }
+            }
+
+            .mobile-menu-dropdown {
+                position: absolute;
+                display: none;
+                left: calc(50% - 120px);
+                top: 15px;
+                width: 240px;
+                background-color: #000000e8;
+                border-top: 2px solid white;
+                z-index: 2;
+
+
+
+                ul {
+                    .mobile-nav-tab {
+                        text-align: center;
+                        padding: 20px;
+
+                        cursor: pointer;
+
+                        a {
+                            color: grey;
+
+                        }
+
+                        &:hover {
+                            background-color: rgba(128, 128, 128, 0.116);
+                            color: white; //if active
+                            font-weight: bold; //if active
+
+                            .mobile-menu-dropdown {
+                                display: block;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+
+        // Normal primary menu (left)
+        .nav-tab {
+            display: none;
+            float: left;
+            margin-left: 10px;
+            color: white;
+
+            a {}
+        }
+    }
+
+
+    //Secondary menu (right)
+    .secondary-navigation {
+        display: flex;
+        position: absolute;
+        right: 40px;
+        height: inherit;
+        align-items: center;
+        gap: 10px;
+
+        .secondary-tab {
+            img {
+                height: 25px;
+            }
+
+            .global-search {
+                display: flex;
+                // border: 1px solid white;
+                // background-color: rgba(0, 0, 0, 0.767);
+
+
+                img {
+                    padding: 5px;
+                }
+
+                input {
+                    // display: none;
+                    width: 0px;
+                    font-size: 15px;
+                    padding: 5px;
+                    background-color: transparent;
+                    color: white;
+                    outline: none;
+                    border: none;
+                    transition: width 2s;
+
+
+                }
+            }
+
+            #kids-link {
+                // display: none;
+            }
+
+            .notifications {}
+
+            .account-settings {
+                .account-settings-button {
+                    // height: inherit;
+                    border: none;
+                    background: none;
+
+                    img {}
+                }
+
+                .account-settings-dropdown {
+                    position: absolute;
+                    z-index: 2;
+                    display: none;
+                    background-color: #000000e8;
+
+                    width: 200px;
+                    right: 0;
+
+                    ul {
+                        overflow: auto;
+                        border-top: 1px solid grey;
+                    }
+
+                }
+
+                .account-settings__list {
+                    li {
+                        padding: 0 0;
+
+
+                        .tab {
+                            width: 100%;
+                            float: left;
+                            height: 40px;
+                            color: white;
+                            clear: both;
+                            cursor: pointer;
+
+                            img {
+                                float: left;
+                                padding: 10px 0 0 10px;
+                                height: 20px;
+                            }
+
+                            a {
+                                float: left;
+                                padding: 12px 10px;
+                            }
+
+                            #sign-out-button {
+                                margin-left: 50px;
+                            }
+
+                            &:hover {
+                                a {
+                                    text-decoration: underline;
+                                }
+                            }
+
+                        }
+
+
+                    }
+                }
+
+
+                &:hover {
+                    .account-settings-dropdown {
+                        display: block;
+
+                    }
+                }
+
+
+
+
+            }
+        }
+    }
+
+
+
+    @media (min-width: 885px) {
+        .pinned-header-container {
+            .menu-navigation {
+                height: 70px;
+                font-size: 14px;
+
+                .logo {}
+
+                .primary-navigation {
+                    .mobile-menu-container {
+                        display: none;
+                    }
+
+                    .nav-tab {
+                        display: block;
+
+
+                    }
+                }
+
+
+            }
+        }
+    }
+}
+
+.active-nav {
+    color: white !important;
+    font-weight: bold !important;
+}
+
+.nav-bg {
+    background-color: $backgroundColor;
+}

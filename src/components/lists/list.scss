@@ -1,0 +1,180 @@
+@import "../../variables";
+
+// @mixin arrow ($deg, $size, $padding : 10px, $color : white) {
+//     padding: $padding;
+//     border-width: $size $size 0px 0;
+//     border-style: solid;
+//     border-color: $color;
+//     transform: rotate($deg);
+// }
+
+%arrow-div {
+    width: 50px;
+    background: rgba(0, 0, 0, 0.247);
+    height: 140px;
+    position: absolute;
+    z-index: 1;
+    top: 0;
+}
+
+.list {
+    margin: clamp(15px, 1vw, 30px) auto 0 auto;
+
+    .list__header {
+        overflow: auto;
+        display: block;
+
+
+
+        .header__title {
+            width: fit-content;
+            padding-bottom: 10px;
+            overflow: auto;
+            display: flex;
+            align-items: center;
+
+            h1 {
+                // font-size: 14px;
+                width: fit-content;
+                font-size: clamp(12px, 1.5vw, 24px);
+                color: whitesmoke;
+                float: left;
+                cursor: pointer;
+            }
+
+            .expanding-link {
+                position: relative;
+                float: left;
+
+                width: 120px;
+
+                a {
+                    float: left;
+                    margin: 0px 0 0 10px;
+                    color: #078378;
+                    font-size: clamp(9px, 1.5vw, 12px);
+                    font-weight: bold;
+                    position: relative;
+                    opacity: 0;
+                    animation-duration: 1s;
+                    animation-fill-mode: forwards;
+                    cursor: pointer;
+                }
+
+                .title-arrow {
+                    float: left;
+                    margin: 5px 0 0 0px;
+                    @include arrow(45deg, 2px, 3px, #078378);
+                    display: none;
+                    animation-duration: 1s;
+                    animation-fill-mode: forwards;
+                    position: absolute;
+                    cursor: pointer;
+
+                }
+            }
+
+            &:hover {
+                .expanding-link .title-arrow {
+                    // background-color: red;
+                    animation-name: arrow-right-transition;
+                    display: block;
+                }
+
+                // color: red;
+
+                .expanding-link a {
+                    animation-name: gentle-appearance;
+                }
+            }
+        }
+
+        .slider-indicator {}
+
+    }
+
+
+    .list__content {
+        position: relative;
+
+        .content-inner {
+            // background-color: orange;
+            display: inline-flex;
+            flex-direction: row;
+            width: fit-content;
+            transition: margin 1s;
+        }
+
+        .left-arrow-div {
+            @extend %arrow-div;
+            left: 5px;
+
+            .arrow {
+                position: absolute;
+                top: calc(50% - 10px);
+                left: 10px;
+                @include arrow(-135deg, 3px, 5px)
+            }
+        }
+
+        .right-arrow-div {
+            @extend %arrow-div;
+            right: 5px;
+
+            .arrow {
+                position: absolute;
+                top: calc(50% - 10px);
+                right: 10px;
+                @include arrow(45deg, 3px, 5px)
+            }
+        }
+
+        .arrow-toggle {
+            display: none;
+
+            //Scroll arrows direct hover
+            &:hover {
+                .arrow {
+                    padding: 7px;
+                    border-width: 5px 5px 0 0;
+                    top: calc(50% - 12px);
+                }
+            }
+        }
+
+        // Scroll arrows when mouse on list
+        &:hover .arrow-toggle {
+            display: block;
+        }
+    }
+
+    // Displays arrow (without link) when on list
+    &:hover .header__title .expanding-link .title-arrow {
+        display: block;
+    }
+
+}
+
+
+
+
+
+
+
+@keyframes arrow-right-transition {
+    to {
+        margin-left: 80px;
+    }
+}
+
+@keyframes gentle-appearance {
+    from {
+        display: block;
+        opacity: 0;
+    }
+
+    to {
+        margin-left: 10px;
+        opacity: 1;
+    }
+}
