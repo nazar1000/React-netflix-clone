@@ -19,8 +19,9 @@ Dependencies :
 ## About the project
 | First Header  | Second Header |
 | ------------- | ------------- |
-| Content Cell  | Content Cell  |
-| Content Cell  | Content Cell  |
+| ![Sitemap](/Readme/netflix-base.jpg)  | ![Sitemap](/Readme/netflix-tv.jpg)  |
+| ![Sitemap](/Readme/netflix-login.jpg)  | ![Sitemap](/Readme/netflix-preview.jpg)  |
+| ![Sitemap](/Readme/netflix-arrowlist.jpg)  | ![Sitemap](/Readme/netflix-language.jpg)  |
 
 
 
