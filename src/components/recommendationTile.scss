@@ -1,12 +1,16 @@
+@import "../variables";
+
 .recommendation-tile {
-    background-color: #2f2f2f;
-    border-radius: 5px;
+    // background-color: #2f2f2f;
     overflow: visible;
     cursor: pointer;
 
     .img-container {
         img {
             width: 100%;
+            border-radius: 4px 4px 0 0;
+            overflow: hidden;
+            vertical-align: bottom;
         }
 
         h2 {}
@@ -17,6 +21,8 @@
         padding: 10px 15px 20px 15px;
         height: 140px;
         overflow: visible;
+        border-radius: 5px;
+        background-color: $PreviewTileBgColor;
 
 
         .legend {

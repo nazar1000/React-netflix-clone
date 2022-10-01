@@ -137,12 +137,13 @@
     z-index: 1;
     top: -40px;
     display: none;
-    color: black;
+    color: $TootTipColor;
     width: fit-content;
-    background-color: white;
+    background-color: $ToolTipBgColor;
     width: max-content;
     padding: 5px 10px;
     border-radius: 4px;
+    font-weight: bold;
 
 }
 

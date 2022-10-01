@@ -36,7 +36,7 @@ $smallerFontSize : 14px; //label link
 
 .preview-inner {
     max-width: 900px;
-    background-color: #181818;
+    background-color: $PreviewBgColor;
     margin: 30px auto 0 auto;
     border-radius: 10px;
     overflow: hidden;
@@ -47,8 +47,6 @@ $smallerFontSize : 14px; //label link
         img {
             width: 100%
         }
-
-
 
         .bg__buttons {
             position: absolute;
@@ -86,12 +84,22 @@ $smallerFontSize : 14px; //label link
             width: 50%;
             float: left;
             font-size: $smallerFontSize;
+
+            &>span {
+                font-weight: bold;
+            }
+
+            &>p {
+                margin: 5px 0;
+            }
         }
 
         .show-extra-info {
             width: 40%;
             float: right;
             font-size: $smallerFontSize;
+
+
 
             label {}
         }
@@ -109,15 +117,15 @@ $smallerFontSize : 14px; //label link
                 font-weight: bold;
                 font-size: 1.5rem;
                 color: white;
-                background-color: #2c2c2c;
-                border: 1px solid grey;
+                background-color: $PreviewSeasonDropdownButtonColor;
+                border: 1px solid $PreviewSeasonDropdownBorderColor;
                 position: relative;
                 cursor: pointer;
 
                 .seasons-dropdown {
                     position: absolute;
                     width: 200px;
-                    background-color: #2c2c2c;
+                    background-color: $PreviewSeasonDropdownButtonColor;
                     border: inherit;
                     z-index: 1;
                     top: 27px;
@@ -142,7 +150,7 @@ $smallerFontSize : 14px; //label link
 
         .episode-list {
             .episode-tile:nth-of-type(2) {
-                background-color: #464646;
+                background-color: $PreviewEpisodesBorderColor;
             }
 
 
@@ -152,6 +160,10 @@ $smallerFontSize : 14px; //label link
     .collections-container {}
 
     .recommendation-container {
+
+        &>h2 {
+            margin-bottom: 20px;
+        }
 
 
 
@@ -174,7 +186,7 @@ $smallerFontSize : 14px; //label link
 
 
 .label-grey {
-    color: grey;
+    color: $PreviewSpanColor;
 }
 
 .separator {

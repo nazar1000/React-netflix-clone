@@ -1,7 +1,7 @@
 import "./tile.scss"
 import { CSSProperties, useContext, useEffect, useState } from "react";
 import { ContextGlobal } from "../App";
-import { getGenreName } from "../helper_function/helper";
+import { getGenreName } from "../helper/helper";
 import Button from "./Button";
 
 type TileProps = {

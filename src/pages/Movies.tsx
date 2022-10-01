@@ -1,7 +1,7 @@
 import { useState } from "react";
 import { Outlet } from "react-router-dom";
 import Highlight from "../components/L.components/Highlight";
-import NamedLists from "../components/lists/NamedListDistributor";
+import ListDistributor from "../components/lists/ListDistributor";
 import TiledList from "../components/lists/TiledList";
 import Loading from "../components/Loading";
 
@@ -35,7 +35,7 @@ const Movies = (props: MovieProps) => {
                     {props.viewMode == "full" &&
                         <>
                             <Highlight highlight={props.showsData[3][0][16]} />
-                            <NamedLists showList={props.showsData} type="movies" updatePageLoaded={updatePageLoaded} />
+                            <ListDistributor showList={props.showsData} type="movies" updatePageLoaded={updatePageLoaded} />
                         </>
                     }
 

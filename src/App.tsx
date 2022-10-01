@@ -1,6 +1,6 @@
 import { useEffect, useState, createContext } from 'react';
 import { BrowserRouter, Routes, Route } from "react-router-dom";
-import { useAxiosGetAll } from './helper_function/useAxios';
+import { useAxiosGetAll } from './helper/useAxios';
 
 import Nav from './components/L.components/Nav';
 import Home from './pages/Home';
@@ -15,7 +15,7 @@ import Footer from './components/Footer';
 import FrontPage from './pages/FrontPage';
 import LoginPage from './pages/LoginPage';
 import SearchPage from './pages/SearchPage';
-import ExploreAllList from './components/L.components/ExploreAllList';
+import ListPreview from './components/lists/ListPreview';
 
 //Types
 type data = {
@@ -266,7 +266,6 @@ function App() {
     })
   }
 
-
   return (
     <>
       <div className='content-wrap'>
@@ -298,14 +297,14 @@ function App() {
               <ContextFilter.Provider value={{ updateFilter, filter, updateViewMode, viewMode }}>
                 <Nav tvGenres={allData.genreLabels?.tvGenres} movieGenres={allData.genreLabels?.movieGenres} updateFilter={updateFilter} updateViewMode={updateViewMode} />
               </ContextFilter.Provider>
-            }>
+            } >
 
               <Route path="browse" element={
                 <ContextGlobal.Provider value={{ updatePreview, addToList, updateLike, likedShows, playThis, updateIsTileActive, isTileActive }}>
                   <Home showsData={sortedData?.homePageData ? sortedData.homePageData : []} />
                 </ContextGlobal.Provider>}>
 
-                <Route path='list/:listname' element={<ExploreAllList allData={sortedData} />} />
+                <Route path='list/:listname' element={<ListPreview allData={sortedData} />} />
               </Route>
 
 
@@ -314,7 +313,7 @@ function App() {
                   <TvShows showsData={sortedData?.tvPageData ? sortedData.tvPageData : []} viewMode={viewMode} filter={filter} />
                 </ContextGlobal.Provider>}>
 
-                <Route path='list/:listname' element={<ExploreAllList allData={sortedData} />} />
+                <Route path='list/:listname' element={<ListPreview allData={sortedData} />} />
               </Route>
 
               <Route path="tv/genres/:genreId" element={
@@ -329,7 +328,7 @@ function App() {
                     showsData={sortedData?.moviePageData ? sortedData.moviePageData : []} viewMode={viewMode} filter={filter} />
                 </ContextGlobal.Provider>}>
 
-                <Route path='list/:listname' element={<ExploreAllList allData={sortedData} />} />
+                <Route path='list/:listname' element={<ListPreview allData={sortedData} />} />
               </Route>
 
               <Route path="movies/genres/:genreId" element={

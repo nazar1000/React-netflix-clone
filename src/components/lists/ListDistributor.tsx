@@ -1,17 +1,17 @@
-import "./namedList.scss"
+import "./listdistributor.scss"
 import "./list.scss"
-import { CSSProperties, useEffect } from "react";
+import { useEffect } from "react";
 import { useState } from "react";
 import List from "./List"
 
 
-type NamedListDistributorProps = {
+type ListDistributorProps = {
     type: "movies" | "tv" | "home" | "new & popular" | "my list" | "browser by language" | "genre"
     showList: any,
     updatePageLoaded: Function
 }
 
-function NamedListDistributor(props: NamedListDistributorProps) {
+function ListDistributor(props: ListDistributorProps) {
     const [idCounter, setIdCounter] = useState(0);
 
     //Delay for images url request to prevent error
@@ -51,11 +51,11 @@ function NamedListDistributor(props: NamedListDistributorProps) {
             }
 
             {props.type == "new & popular" && props.showList && props.showList.map((show: any, index: number) => {
-                return <List key={index} listName={props?.showList[index][1]} showList={show[0]} id={index} loadID={idCounter} exploreAllLink={index} />
+                return <List key={index} listName={props?.showList[index][1]} showList={show[0]} id={index} loadID={idCounter} />
             })}
 
         </div>
     )
 }
 
-export default NamedListDistributor;
+export default ListDistributor;

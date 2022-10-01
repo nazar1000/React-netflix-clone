@@ -14,14 +14,6 @@ body {
 
 }
 
-.my-list,
-.search-list {
-  margin: 200px 3% 10px 3%;
-  width: 94%;
-  height: fit-content;
-  min-height: 50vh;
-}
-
 a,
 a:hover,
 a:visited,
@@ -45,31 +37,15 @@ ul {
 
 }
 
-.bold {
-  font-weight: bold;
-  color: $textColor  !important;
-
-  a {
-    color: $textColor  !important;
-  }
-}
 
 .flex {
   display: flex;
   column-gap: 5px;
 }
 
-.arrowDown {
-  border-color: #fff transparent transparent;
-  border-style: solid;
-  border-width: 5px 5px 0;
-  height: 0;
-  position: absolute;
-  right: 10px;
-  top: 44%;
-  width: 0;
-}
 
+
+//Close button for preview and arrow List ( the blue link that is next to list name)
 .close-button {
   width: 15px;
   height: 15px;
@@ -95,4 +71,12 @@ ul {
   &:hover {
     background-color: #2b2b2b;
   }
+}
+
+.my-list,
+.search-list {
+  margin: 200px 3% 10px 3%;
+  width: 94%;
+  height: fit-content;
+  min-height: 50vh;
 }

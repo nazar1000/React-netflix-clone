@@ -1,5 +1,5 @@
 import "./tiledList.scss"
-import { useAxiosFilter } from "../../helper_function/useAxios";
+import { useAxiosFilter } from "../../helper/useAxios";
 import Tile from "../Tile";
 
 type TiledListProps = {

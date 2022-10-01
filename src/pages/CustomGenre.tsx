@@ -1,8 +1,8 @@
 import { useState } from "react";
 import { useLocation, useParams } from "react-router-dom"
-import { useAxiosGenres } from "../helper_function/useAxios"
+import { useAxiosGenres } from "../helper/useAxios"
 import Highlight from "../components/L.components/Highlight";
-import NamedLists from "../components/lists/NamedListDistributor";
+import ListDistributor from "../components/lists/ListDistributor";
 import TiledList from "../components/lists/TiledList";
 import Loading from "../components/Loading";
 
@@ -35,7 +35,7 @@ function CustomGenre(props: CustomGenreProps) {
             {props.viewMode == "full" && genresData[0] !== undefined &&
                 <>
                     <Highlight highlight={genresData.length > 0 ? genresData[4] : {}} />
-                    <NamedLists showList={genresData} type="genre" updatePageLoaded={updatePageLoaded} />
+                    <ListDistributor showList={genresData} type="genre" updatePageLoaded={updatePageLoaded} />
                 </>
             }
 

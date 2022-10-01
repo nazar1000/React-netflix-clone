@@ -1,12 +1,14 @@
-import axios, { Axios, AxiosPromise, AxiosResponse } from "axios";
+import axios, { AxiosResponse } from "axios";
 import { useEffect, useState } from "react"
-import { api_key } from "./helper";
 import languages_list from "./language_list";
 
 
+
+export const api_key = "?api_key=";
+
+
+
 const mainUrl = "https://api.themoviedb.org/3/";
-
-
 const urlList = {
     movieGenres: mainUrl + "genre/movie/list" + api_key,
     tvGenres: mainUrl + "genre/tv/list" + api_key,
@@ -21,6 +23,8 @@ const urlList = {
     popularMovies: mainUrl + "movie/popular" + api_key,
     popularTv: mainUrl + "tv/popular" + api_key,
 }
+
+
 
 export const useAxios = (
     type: "home" | "tv" | "movie" | "new" | "browse" | "custom" | "genre" | "all",

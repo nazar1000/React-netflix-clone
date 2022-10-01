@@ -20,7 +20,7 @@
     .links {
         max-width: 800px;
         width: 100%;
-        margin: 1em auto;
+        margin: 1em auto 0 auto;
         font-size: 1.2em;
         color: grey;
 
@@ -51,9 +51,8 @@
     }
 
     .copyright-div {
-
         text-align: center;
-
+        padding: 10px 0;
 
         p {
             font-size: 1.1em;

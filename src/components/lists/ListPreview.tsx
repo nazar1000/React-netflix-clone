@@ -3,16 +3,15 @@ import { useContext, useEffect, useState } from "react";
 import { useLocation, useNavigate, useParams } from "react-router-dom";
 import { ContextGlobal } from "../../App";
 import Tile from "../Tile";
-import "./explorealllist.scss";
+import "./listpreview.scss";
 
 
-type ExploreAllListProps = {
+type listPreviewProps = {
     allData: any
 
 }
 
-
-function ExploreAllList(props: ExploreAllListProps) {
+function ListPreview(props: listPreviewProps) {
     const [list, setList] = useState<any[]>([])
     const [margin, setMargin] = useState({ marginTop: "0px" });
     const { updateIsTileActive } = useContext(ContextGlobal)
@@ -34,12 +33,15 @@ function ExploreAllList(props: ExploreAllListProps) {
 
 
     useEffect(() => {
-        setPreview(true);
+        handleClick(true);
     }, [])
 
-    const setPreview = (isOpen: boolean) => {
+    const handleClick = (isOpen: boolean) => {
         //locks html overflow
+
+        console.log("hellow wtf " + isOpen)
         if (isOpen) {
+
             document.getElementsByTagName("html")[0].style.overflow = "hidden";
             document.getElementsByTagName("html")[0].style.overflow = "calc(100% - 30px)";
             setMargin({ marginTop: window.scrollY + "px" })
@@ -52,10 +54,10 @@ function ExploreAllList(props: ExploreAllListProps) {
     }
 
     return (
-        <div className="link-list-div" style={margin} onClick={() => setPreview(false)}>
-            <div className="link-list__inner">
+        <div className="link-list-div" style={margin} onClick={() => handleClick(false)}>
+            <div className="link-list__inner" onClick={(e) => e.stopPropagation()}>
                 <div className="padding-div">
-                    <div className="close-button" onClick={(e) => { setPreview(false); e.stopPropagation() }}></div>
+                    <div className="close-button" onClick={(e) => { e.stopPropagation(); handleClick(false); }}></div>
                     <h1>{list[1]}</h1>
 
                     <div className="list">
@@ -72,4 +74,4 @@ function ExploreAllList(props: ExploreAllListProps) {
     )
 }
 
-export default ExploreAllList;
+export default ListPreview;

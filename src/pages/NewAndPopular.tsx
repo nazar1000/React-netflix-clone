@@ -1,5 +1,5 @@
 import { useState } from "react";
-import NamedLists from "../components/lists/NamedListDistributor";
+import ListDistributor from "../components/lists/ListDistributor";
 import Loading from "../components/Loading";
 
 type NewPopularProps = {
@@ -15,7 +15,7 @@ const New_And_Popular = (props: NewPopularProps) => {
     return (
         <>
             {!pageLoaded && <Loading />}
-            <NamedLists type="new & popular" showList={props.showsData} updatePageLoaded={updatePageLoaded} />
+            <ListDistributor type="new & popular" showList={props.showsData} updatePageLoaded={updatePageLoaded} />
 
         </>
     )

@@ -1,7 +1,7 @@
 import { useState } from "react";
 import Button from "../components/Button";
 import Highlight from "../components/L.components/Highlight";
-import NamedLists from "../components/lists/NamedListDistributor";
+import ListDistributor from "../components/lists/ListDistributor";
 import Preview from "../components/L.components/Preview";
 import { useContext } from "react";
 import Loading from "../components/Loading";
@@ -29,7 +29,7 @@ const Home = (props: HomeProps) => {
             {props.showsData.length > 0 &&
                 <>
                     <Highlight highlight={props.showsData[5][0][4]} />
-                    <NamedLists showList={props.showsData} type="home" updatePageLoaded={updatePageLoaded} />
+                    <ListDistributor showList={props.showsData} type="home" updatePageLoaded={updatePageLoaded} />
                 </>
             }
 

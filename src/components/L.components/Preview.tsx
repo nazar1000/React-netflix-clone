@@ -4,7 +4,7 @@ import RecommendationTile from "../RecommendationTile";
 import Button from "../Button";
 
 import { useEffect, useState } from "react";
-import { useAxiosDetails } from "../../helper_function/useAxios";
+import { useAxiosDetails } from "../../helper/useAxios";
 
 type PreviewProps = {
     data: any | null,
@@ -55,7 +55,7 @@ function Preview(props: PreviewProps) {
                             <>
                                 <div className="bg-image">
                                     <img src={"https://image.tmdb.org/t/p/original" + (showDetails.details.backdrop_path ? showDetails.details.backdrop_path : showDetails.details.poster_path)}></img>
-                                    <div className="close-button"></div>
+                                    <div className="close-button" onClick={() => props.closePreview()}></div>
                                     <div className="bg__buttons">
                                         <h1>{isMovie == "movie" ? showDetails.details.original_title : showDetails.details.original_name}</h1>
                                         <div className="preview-options">
@@ -174,8 +174,8 @@ function Preview(props: PreviewProps) {
                                             })}
                                         </div>
 
-                                        <span>This show is:</span>
-                                        <span>Maturity rating:</span>
+                                        {/* <span>This show is:</span> */}
+                                        {/* <span>Maturity rating:</span> */}
                                     </div>
                                 </div>
                             </>

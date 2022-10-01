@@ -24,8 +24,6 @@
         overflow: auto;
         display: block;
 
-
-
         .header__title {
             width: fit-content;
             padding-bottom: 10px;
@@ -51,7 +49,7 @@
                 a {
                     float: left;
                     margin: 0px 0 0 10px;
-                    color: #078378;
+                    color: $listArrowLinkColor;
                     font-size: clamp(9px, 1.5vw, 12px);
                     font-weight: bold;
                     position: relative;
@@ -64,7 +62,7 @@
                 .title-arrow {
                     float: left;
                     margin: 5px 0 0 0px;
-                    @include arrow(45deg, 2px, 3px, #078378);
+                    @include arrow(45deg, 2px, 3px, $listArrowLinkColor);
                     display: none;
                     animation-duration: 1s;
                     animation-fill-mode: forwards;

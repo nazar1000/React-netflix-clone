@@ -1,7 +1,7 @@
 import "./dropdown.scss";
-import { useContext, useEffect, useState } from "react";
+import { useContext, useState } from "react";
 import { ContextFilter } from "../App";
-import languages_list from "../helper_function/language_list";
+import languages_list from "../helper/language_list";
 import tileIcon from "../icons/tile.png";
 import paragraphIcon from "../icons/left-align.png";
 

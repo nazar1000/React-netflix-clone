@@ -1,3 +1,4 @@
+// uses global stylesheet
 import Tile from "../components/Tile";
 
 type My_listProps = {
